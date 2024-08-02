@@ -4,6 +4,7 @@
   "description": "Perform simple arithmetic calculation with 2 inputs and with JWT support",
   "main": "index.js",
   "scripts": {
+    "test": "vitest",
     "prestart": "npm install",
     "start": "node index.js"
   },
@@ -20,6 +21,7 @@
     "oas3-tools": "^2.2.3"
   },
   "devDependencies": {
-
+    "supertest": "^7.0.0",
+    "vitest": "^2.0.5"
   }
 }
