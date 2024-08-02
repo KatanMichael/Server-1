@@ -1,0 +1,25 @@
+{
+  "name": "simplecalculator",
+  "version": "1",
+  "description": "Perform simple arithmetic calculation with 2 inputs and with JWT support",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "npm install",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "swagger"
+  ],
+  "license": "Unlicense",
+  "private": true,
+  "dependencies": {
+    "connect": "^3.2.0",
+    "dotenv": "^16.4.5",
+    "js-yaml": "^3.3.0",
+    "jsonwebtoken": "^9.0.2",
+    "oas3-tools": "^2.2.3"
+  },
+  "devDependencies": {
+
+  }
+}
