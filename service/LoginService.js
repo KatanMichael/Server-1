@@ -13,7 +13,7 @@ function getRandomNumber() {
 exports.loginGET = function() {
     return new Promise(function(resolve) 
     {   let jsonWebToken
-        jsonWebToken= jwt.sign(getRandomNumber(),process.env.ACCESS_TOKEN, {expiresIn: '15m'})
+        jsonWebToken= jwt.sign(getRandomNumber(),process.env.ACCESS_TOKEN, {expiresIn: '1s'})
         let respond = {};
         respond['application/json'] = {
             "access_token" : jsonWebToken,

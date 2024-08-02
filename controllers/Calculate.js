@@ -6,6 +6,7 @@ const JTWUtills = require('../utils/jwtUtills.js')
 
 module.exports.calculatePOST = function calculatePOST (req, res, next, body) 
 {
+    const authHeaders = req.headers["authorization"]
     let token = req.headers["authorization"].split(' ')[1];
     JTWUtills.verifyToken(token,next)
     CalculateService.calculatePOST(body)
