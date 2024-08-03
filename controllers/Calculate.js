@@ -4,12 +4,49 @@ const utils = require('../utils/writer.js');
 const CalculateService = require('../service/CalculateService.js')
 const JTWUtills = require('../utils/jwtUtills.js')
 
-module.exports.calculatePOST = function calculatePOST (req, res, next, body) 
+
+const verifyHeaders = (req,res) =>{
+  
+  const authHeaders = req.headers["authorization"]
+
+    if(!authHeaders) {
+      res.status(401).json({
+        error: "Unauthorized"
+    });
+    return true
+    }
+
+  let token = req.headers["authorization"].split(' ')[1];
+
+  if(token == undefined)
+    {
+      res.status(401).json({
+        error: "Unauthorized"
+        });
+        return true;
+    } 
+
+    return false;
+}
+
+const verifyBody = (req,res) => {
+  
+  if(req.body["number1"] == undefined || req.body["number2"] == undefined) 
+  {
+    res.status(400).json({'error': "Bad Request"})
+    return true;
+  }
+  return false;
+}
+
+module.exports.calculatePOST = function calculatePOST (req, res, body) 
 {
-    const authHeaders = req.headers["authorization"]
-    let token = req.headers["authorization"].split(' ')[1];
-    JTWUtills.verifyToken(token,next)
-    CalculateService.calculatePOST(body)
+
+    if(verifyHeaders(req,res)) return res;
+    if(JTWUtills.verifyToken(req,res)) return res;
+    if(verifyBody(req,res)) return res;
+
+    CalculateService.calculatePOST(req.body)
       .then(function (response) {
         utils.writeJson(res, response);
       })
