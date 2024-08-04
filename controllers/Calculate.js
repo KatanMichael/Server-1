@@ -42,9 +42,9 @@ const verifyBody = (req,res) => {
 module.exports.calculatePOST = function calculatePOST (req, res, body) 
 {
 
-    if(verifyHeaders(req,res)) return res;
-    if(JTWUtills.verifyToken(req,res)) return res;
-    if(verifyBody(req,res)) return res;
+    if(verifyHeaders(req,res)) return res; // verify the headers
+    if(JTWUtills.verifyToken(req,res)) return res; // verify the Token
+    if(verifyBody(req,res)) return res; // verify the body of the request
 
     CalculateService.calculatePOST(req.body)
       .then(function (response) {

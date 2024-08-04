@@ -12,6 +12,7 @@ function getRandomNumber() {
 exports.loginGET = function() {
     return new Promise(function(resolve) 
     {
+        // generate a JWT with a payload between 1 - 1000000
         const jsonWebToken= jwt.sign(getRandomNumber(),process.env.ACCESS_TOKEN, {expiresIn: '1m'})
         let respond = {};
         respond['application/json'] = {

@@ -31,7 +31,7 @@ describe('GET /login', () => {
     it('should respond with a valid token', async () => {
         const response = await request(server)
             .get('/login')
-            .send(); // Assuming no payload is required for this request
+            .send(); 
         expect(response.status).toBe(200);
         expect(response.body).toHaveProperty('access_token');
         expect(response.body).toHaveProperty('token_type', 'Bearer');

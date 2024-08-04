@@ -129,4 +129,14 @@ describe('POST /calculate', () => {
         expect(response.status).toBe(403);
         expect(response.body).toHaveProperty('error', 'Forbidden');
     });
+
+    it('should return 400 if body parameters are missing', async () => {
+        const response = await request(server)
+            .post('/calculate')
+            .set('Authorization', `Bearer ${token}`)
+            .send({ numbera: 1, numberb: 2 });
+
+        expect(response.status).toBe(400);
+        expect(response.body).toHaveProperty('error', 'Bad Request');
+    });
 });
