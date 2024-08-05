@@ -42,7 +42,7 @@ This will start the server on the specified port (default: 3000).
 
 ### 1. /login
 
-**Method:** `POST`
+**Method:** `GET`
 
 **Description:** Generates a new JWT token.
 
