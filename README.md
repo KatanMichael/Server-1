@@ -1,5 +1,3 @@
-Sure, here is the complete README file in markdown format that you can copy and paste:
-
 ```markdown
 # Simple Math Calculation API
 
@@ -105,13 +103,3 @@ If you want to contribute to this project, follow these steps:
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Contact
-
-For any questions or suggestions, feel free to contact me:
-
-- GitHub: [yourusername](https://github.com/yourusername)
-- Email: your.email@example.com
-```
-
-Copy and paste this into your README file, and you should be good to go!
