@@ -85,9 +85,7 @@ This will start the server on the specified port (default: 3000).
 You can configure the application settings in the `.env` file:
 
 ```plaintext
-PORT=3000
 JWT_SECRET=your_jwt_secret
-JWT_EXPIRATION=15
 ```
 
 ## Contributing
