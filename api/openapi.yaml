@@ -16,6 +16,11 @@ paths:
           schema: 
             type: string
             description: JWT token for authorization
+        - in: header
+          name: operation
+          schema: 
+            type: string
+            description: "Math opertaion to Perform"
       requestBody:
         content:
           application/json:
